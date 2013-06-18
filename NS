@@ -1,0 +1,11 @@
+Models.chat.sendChat = function(a) {
+      if (!this.chatCommand(a)) {
+          var b = Date.now(), c = {}, d = !0;
+          if (b) {
+              if (this.lastChat = b, c.from = Models.user.data.username, c.fromID = Models.user.data.id, 0 == a.indexOf("/em") || 0 == a.indexOf("/me") ? (c.type = "emote", c.message = Utils.cleanTypedString(a.substr(3))) : (c.type = "message", c.message = Utils.cleanTypedString(a)), -1 == c.message.indexOf("http://") && -1 == c.message.indexOf("https://") || Models.user.hasPermission(Models.user.FEATUREDDJ) || 
+              6E5 < Date.now() - Models.room.joinTime)
+                  c.chatID = socket.chat(a)
+          } 
+      }
+      return !0
+}
